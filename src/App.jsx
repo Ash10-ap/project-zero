@@ -7,7 +7,6 @@ import {images} from './img';
 import './App.css';
 import CarouselProduct from './CarouselProduct';
 import { pimg } from './productimg';
-import { padding } from '@mui/system';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -20,7 +19,7 @@ function App() {
   };
   return (
     <>
-    <Box sx={{ maxWidth: 'fit', flexGrow: 1 }}>
+    <Box sx={{ maxWidth:'100vw', flexGrow: 1,display:'flex',flexWrap:'wrap' }}>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
@@ -33,7 +32,7 @@ function App() {
               <Box
                 component="img"
                 sx={{
-                  height: 500,
+                  maxHeight: 500,
                   display: 'block',
                   minWidth: 400,
                   overflow: 'hidden',
@@ -50,7 +49,7 @@ function App() {
     <hr color='gray'></hr>
     <h3>Discount</h3>
     <hr color='blue'></hr>
-    <Box sx={{ maxWidth: 'fit', flexGrow: 1,mt:10,m:5 }}>
+    <Box sx={{ maxWidth: '100vw', flexGrow: 1,mt:10,m:5 }}>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
@@ -63,7 +62,7 @@ function App() {
               <Box
                 component="img"
                 sx={{
-                  height: 250,
+                  maxHeight: 250,
                   display: 'block',
                   minWidth: 400,
                   overflow: 'hidden',
@@ -80,7 +79,7 @@ function App() {
     <hr color='gray'></hr>
     <h3>Latest Products</h3>
     <hr color='blue'></hr>
-    <div  style={{padding:"5px",display:"flex",flexWrap:"wrap",justifyContent:"space-between"}}>
+    <div  style={{padding:"5px",display:"flex",flexWrap:"wrap",justifyContent:"space-around"}}>
       {pimg.map(val=>{
             return(
               <div key={val.id}>
