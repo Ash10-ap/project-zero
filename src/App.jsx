@@ -5,6 +5,9 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import {images} from './img';
 import './App.css';
+import CarouselProduct from './CarouselProduct';
+import { pimg } from './productimg';
+import { padding } from '@mui/system';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -44,6 +47,9 @@ function App() {
         ))}
       </AutoPlaySwipeableViews>
     </Box>
+    <hr color='gray'></hr>
+    <h3>Discount</h3>
+    <hr color='blue'></hr>
     <Box sx={{ maxWidth: 'fit', flexGrow: 1,mt:10,m:5 }}>
       <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -71,6 +77,25 @@ function App() {
         ))}
       </AutoPlaySwipeableViews>
     </Box>
+    <hr color='gray'></hr>
+    <h3>Latest Products</h3>
+    <hr color='blue'></hr>
+    <div  style={{padding:"5px",display:"flex",flexWrap:"wrap",justifyContent:"space-between"}}>
+      {pimg.map(val=>{
+            return(
+              <div key={val.id}>
+                <CarouselProduct 
+                  name={val.name}
+                  img={val.img}
+                  price={val.price}
+                  des={val.des}
+                />
+              </div>
+            )
+      })}
+    </div>
+    
+
     </>
   )
 }
