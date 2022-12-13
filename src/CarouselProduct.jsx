@@ -9,7 +9,7 @@ function CarouselProduct(props) {
   return (
     <Card sx={{ maxWidth: 250,height:380,minWidth:230 }}>
       <CardActionArea>
-        <CardMedia sx={{width:'fitContent',borderRadius: '15px',fit:'crop'}}
+        <CardMedia sx={{width:'fitContent',borderRadius: '15px',fit:'crop' }}
           component="img"
           height="280"
           image={props.img}
