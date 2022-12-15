@@ -7,6 +7,7 @@ import {images} from './img';
 import './App.css';
 import CarouselProduct from './CarouselProduct';
 import { pimg } from './productimg';
+import Footer from './Footer';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -93,8 +94,9 @@ function App() {
             )
       })}
     </div>
-    
-
+    <div style={{paddingTop:'50px'}}>
+      <Footer/>
+    </div>
     </>
   )
 }
